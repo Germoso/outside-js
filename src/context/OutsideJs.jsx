@@ -16,4 +16,4 @@ const OutsideJs = ({ children }) => {
     )
 }
 
-export { OutsideJs, context }
+export { OutsideJs, context, INITIAL_STATE }

@@ -8,7 +8,7 @@ const Errors = ({ messages }) => {
     useXresizer(box, resizer)
 
     return (
-        <div ref={box} className="absolute bottom-0 w-full h-20 bg-background">
+        <div ref={box} className="bottom-0 w-full h-[200px] max-h-[400px] ">
             <div
                 ref={resizer}
                 className="w-full h-2 bg-paragraph hover:cursor-n-resize"

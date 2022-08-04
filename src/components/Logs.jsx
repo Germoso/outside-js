@@ -2,7 +2,7 @@ import React from "react"
 
 const Logs = ({ messages }) => {
     return (
-        <div>
+        <div className="relative grow">
             <div>
                 {messages.logs.map((message) => {
                     if (typeof message === "object") {

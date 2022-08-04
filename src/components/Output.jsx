@@ -1,15 +1,23 @@
 import React, { useContext } from "react"
-import { context } from "../context/OutsideJs"
+import { context, INITIAL_STATE } from "../context/OutsideJs"
 import { Errors } from "./Errors"
 import { Logs } from "./Logs"
+import { ClearButton } from "./ClearButtons"
 
 const Output = () => {
-    const [messages] = useContext(context)
-    console.log(messages.logs)
+    const [messages, setMessages] = useContext(context)
+
+    const clearOutput = () => {
+        setMessages(INITIAL_STATE)
+    }
+
     return (
-        <div className="relative grow text-paragraph p-2">
+        <div className="relative grow text-paragraph p-2 flex flex-col">
             <Logs messages={messages} />
             <Errors messages={messages} />
+            <div className="absolute top-2 right-2">
+                <ClearButton text="clear console" callback={clearOutput} />
+            </div>
         </div>
     )
 }
