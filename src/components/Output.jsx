@@ -12,7 +12,7 @@ const Output = () => {
     }
 
     return (
-        <div className="relative grow text-paragraph p-2 flex flex-col">
+        <div className="relative grow text-paragraph  flex flex-col">
             <Logs messages={messages} />
             <Errors messages={messages} />
             <div className="absolute top-2 right-2">

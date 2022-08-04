@@ -3,12 +3,12 @@ import React from "react"
 const Logs = ({ messages }) => {
     return (
         <div className="relative grow">
-            <div>
+            <div className="ml-2 mt-2">
                 {messages.logs.map((message) => {
                     if (typeof message === "object") {
                         console.log("yes")
                         return (
-                            <span className="block text-paragraph">
+                            <span className="block text-secondary">
                                 <span className="text-headline select-none">
                                     {"> "}
                                 </span>
@@ -18,7 +18,7 @@ const Logs = ({ messages }) => {
                     }
                     if (typeof message === "function") {
                         return (
-                            <span className="block text-paragraph">
+                            <span className="block text-secondary">
                                 <span className="text-headline select-none">
                                     {"> "}
                                 </span>
@@ -27,7 +27,7 @@ const Logs = ({ messages }) => {
                         )
                     }
                     return (
-                        <span className="block text-paragraph">
+                        <span className="block text-secondary">
                             <span className="text-headline select-none">
                                 {"> "}
                             </span>

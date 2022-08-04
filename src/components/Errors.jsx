@@ -14,11 +14,13 @@ const Errors = ({ messages }) => {
                 className="w-full h-2 bg-paragraph hover:cursor-n-resize"
             ></div>
             <div className="border-b mb-2">
-                <span className="select-none">Errors</span>
+                <span className="select-none text-paragraph font-bold pl-2">
+                    Errors
+                </span>
             </div>
             <div>
                 {messages.errors.map((message) => (
-                    <span className="block text-headline">
+                    <span className="block text-headline pl-2">
                         <span className="text-headline select-none">
                             {"> "}
                         </span>

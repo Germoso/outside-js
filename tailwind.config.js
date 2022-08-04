@@ -6,8 +6,8 @@ module.exports = {
         colors: {
             background: "#1e1e1e",
             headline: "#fffffe",
-            paragraph: "#a7a9be",
-            transparent: "00FFFFFF",
+            paragraph: "#393939",
+            secondary: "#a7a9be",
         },
         extend: {},
     },

@@ -27,7 +27,7 @@ const Playground = () => {
     }
 
     return (
-        <div className="relative w-3/5">
+        <div className="relative w-3/5 border-r border-paragraph pt-2">
             <Editor
                 defaultLanguage="javascript"
                 onChange={handleChange}

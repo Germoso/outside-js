@@ -13,7 +13,7 @@ const useXresizer = (component, resizer) => {
                     component.current.style.height = 8 + "px"
             }
             const onMouseup = (e) => {
-                resizer.current.style.backgroundColor = "#a7a9be"
+                resizer.current.style.backgroundColor = "#393939"
                 window.removeEventListener("mousemove", onMousemove)
             }
             window.addEventListener("mousemove", onMousemove)
