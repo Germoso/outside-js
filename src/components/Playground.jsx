@@ -1,4 +1,6 @@
+import Editor from "@monaco-editor/react"
 import React, { useState } from "react"
+import { Loading } from "./Loading"
 import { useConsole } from "../hooks/useConsole"
 import { useTranspiler } from "../hooks/useTranspiler"
 
@@ -7,8 +9,12 @@ const Playground = () => {
     const { code } = useTranspiler(untranspiledCode)
     const outside_js = useConsole()
 
-    const handleTyping = (e) => {
-        setUntranspiledCode(e.target.value)
+    //NUEVO CODIGO
+
+    /* require monaco */
+
+    const handleChange = (value, e) => {
+        setUntranspiledCode(value)
     }
 
     const run = () => {
@@ -22,15 +28,12 @@ const Playground = () => {
 
     return (
         <div className="relative w-3/5">
-            <textarea
-                className="border-r w-full h-full bg-[#00000000] text-headline resize-none p-2"
-                onChange={handleTyping}
-                value={untranspiledCode}
-                name="code"
-                cols="30"
-                rows="10"
-                placeholder="Type to start coding..."
-            ></textarea>
+            <Editor
+                defaultLanguage="javascript"
+                onChange={handleChange}
+                loading={Loading}
+                theme={"vs-dark"}
+            />
             <div className=" flex w-full justify-center absolute bottom-0">
                 <button
                     className=" select-none bottom-2 border border-headlines left-1/2 text-headline py-2 px-4 hover:text-background hover:bg-headline transition-colors my-2"

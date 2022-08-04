@@ -5,7 +5,7 @@ import { OutsideJs } from "./context/OutsideJs"
 function App() {
     return (
         <OutsideJs>
-            <div className="text-xl font-mono flex max-h-screen min-h-screen bg-background overflow-hidden">
+            <div className="text-base font-mono flex max-h-screen min-h-screen bg-background overflow-hidden">
                 <Playground />
                 <Output />
             </div>
