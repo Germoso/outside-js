@@ -31,9 +31,9 @@ const Playground = () => {
                 rows="10"
                 placeholder="Type to start coding..."
             ></textarea>
-            <div className="flex w-full justify-center absolute bottom-2">
+            <div className=" flex w-full justify-center absolute bottom-0">
                 <button
-                    className="bottom-2 border border-headlines left-1/2 text-headline py-2 px-4 hover:text-background hover:bg-headline transition-colors"
+                    className=" select-none bottom-2 border border-headlines left-1/2 text-headline py-2 px-4 hover:text-background hover:bg-headline transition-colors my-2"
                     onClick={run}
                 >
                     Run

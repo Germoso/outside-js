@@ -19,7 +19,9 @@ const Errors = ({ messages }) => {
             <div>
                 {messages.errors.map((message) => (
                     <span className="block text-headline">
-                        <span className="text-headline">{"> "}</span>
+                        <span className="text-headline select-none">
+                            {"> "}
+                        </span>
                         {message.message}
                     </span>
                 ))}

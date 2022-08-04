@@ -9,14 +9,28 @@ const Logs = ({ messages }) => {
                         console.log("yes")
                         return (
                             <span className="block text-paragraph">
-                                <span className="text-headline">{"> "}</span>
+                                <span className="text-headline select-none">
+                                    {"> "}
+                                </span>
+                                {String(message)}
+                            </span>
+                        )
+                    }
+                    if (typeof message === "function") {
+                        return (
+                            <span className="block text-paragraph">
+                                <span className="text-headline select-none">
+                                    {"> "}
+                                </span>
                                 {String(message)}
                             </span>
                         )
                     }
                     return (
                         <span className="block text-paragraph">
-                            <span className="text-headline">{"> "}</span>
+                            <span className="text-headline select-none">
+                                {"> "}
+                            </span>
                             {message}
                         </span>
                     )

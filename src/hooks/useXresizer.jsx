@@ -8,6 +8,8 @@ const useXresizer = (component, resizer) => {
             const onMousemove = (e) => {
                 component.current.style.height =
                     boxHeight - (e.clientY - prevY) + "px"
+                if (component.current.getBoundingClientRect().height < 80)
+                    component.current.style.height = 8 + "px"
             }
             const onMouseup = (e) => {
                 window.removeEventListener("mousemove", onMousemove)
