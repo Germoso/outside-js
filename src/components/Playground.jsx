@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { useConsole } from "../hooks/useConsole"
 import { useTranspiler } from "../hooks/useTranspiler"
 
@@ -7,10 +7,11 @@ const Playground = () => {
     const { code } = useTranspiler(untranspiledCode)
     const outside_js = useConsole()
 
+    //NUEVO CODIGO
+
     const handleTyping = (e) => {
         setUntranspiledCode(e.target.value)
     }
-
     const run = () => {
         try {
             // eslint-disable-next-line no-eval
@@ -22,8 +23,9 @@ const Playground = () => {
 
     return (
         <div className="relative w-3/5">
+            <div className="w-px h-full bg-paragraph absolute right-0 hover:cursor-ew-resize"></div>
             <textarea
-                className="border-r w-full h-full bg-[#00000000] text-headline resize-none p-2"
+                className="w-full h-full bg-[#00000000] text-headline resize-none p-2"
                 onChange={handleTyping}
                 value={untranspiledCode}
                 name="code"
