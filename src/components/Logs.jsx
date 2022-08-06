@@ -1,14 +1,17 @@
-import React from "react"
+import React, { useId } from "react"
 
 const Logs = ({ messages }) => {
+    const id = useId()
     return (
         <div className="relative grow">
             <div className="ml-2 mt-2">
                 {messages.logs.map((message) => {
                     if (typeof message === "object") {
-                        console.log("yes")
                         return (
-                            <span className="block text-secondary">
+                            <span
+                                key={id + Math.random() * Math.random()}
+                                className="block text-secondary"
+                            >
                                 <span className="text-headline select-none">
                                     {"> "}
                                 </span>
@@ -18,7 +21,14 @@ const Logs = ({ messages }) => {
                     }
                     if (typeof message === "function") {
                         return (
-                            <span className="block text-secondary">
+                            <span
+                                key={
+                                    id +
+                                    String(message) +
+                                    Math.random() * Math.random()
+                                }
+                                className="block text-secondary"
+                            >
                                 <span className="text-headline select-none">
                                     {"> "}
                                 </span>
@@ -27,7 +37,14 @@ const Logs = ({ messages }) => {
                         )
                     }
                     return (
-                        <span className="block text-secondary">
+                        <span
+                            key={
+                                id +
+                                String(message) +
+                                Math.random() * Math.random()
+                            }
+                            className="block text-secondary"
+                        >
                             <span className="text-headline select-none">
                                 {"> "}
                             </span>

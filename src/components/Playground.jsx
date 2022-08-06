@@ -48,14 +48,6 @@ const Playground = () => {
                 loading={<Loading />}
                 theme={"vs-dark"}
             />
-            <div className=" flex w-full justify-center absolute bottom-0">
-                <button
-                    className=" select-none bottom-2 border border-headlines left-1/2 text-headline py-2 px-4 hover:text-background hover:bg-headline transition-colors my-2"
-                    // onClick={run}
-                >
-                    Run
-                </button>
-            </div>
         </div>
     )
 }

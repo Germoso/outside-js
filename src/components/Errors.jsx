@@ -1,10 +1,10 @@
-import React, { useRef } from "react"
+import React, { useRef, useId } from "react"
 import { useXresizer } from "../hooks/useXresizer"
 
 const Errors = ({ messages }) => {
     const box = useRef()
     const resizer = useRef()
-
+    const id = useId()
     useXresizer(box, resizer)
 
     return (
@@ -20,7 +20,12 @@ const Errors = ({ messages }) => {
             </div>
             <div>
                 {messages.errors.map((message) => (
-                    <span className="block text-headline pl-2">
+                    <span
+                        key={
+                            id + String(message) + Math.random() * Math.random()
+                        }
+                        className="block text-headline pl-2"
+                    >
                         <span className="text-headline select-none">
                             {"> "}
                         </span>
