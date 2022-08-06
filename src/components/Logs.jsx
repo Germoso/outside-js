@@ -3,7 +3,7 @@ import React, { useId } from "react"
 const Logs = ({ messages }) => {
     const id = useId()
     return (
-        <div className="relative grow">
+        <div className="overflow-y-scroll flex-1 sm:min-h-[300px]">
             <div className="ml-2 mt-2">
                 {messages.logs.map((message) => {
                     if (typeof message === "object") {

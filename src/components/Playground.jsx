@@ -40,7 +40,7 @@ const Playground = () => {
     }, [code, clearOutput, run])
 
     return (
-        <div className="relative w-3/5 border-r border-paragraph pt-2">
+        <div className="h-3/5 w-full border-b border-r border-paragraph sm:h-full sm:w-4/6 ">
             <Editor
                 // ref={editorRef}
                 defaultLanguage="javascript"

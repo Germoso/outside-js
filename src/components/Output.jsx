@@ -7,7 +7,7 @@ const Output = () => {
     const [messages] = useContext(context)
 
     return (
-        <div className="relative grow text-paragraph  flex flex-col">
+        <div className="flex flex-col grow h-full overflow-clip">
             <Logs messages={messages} />
             <Errors messages={messages} />
         </div>
