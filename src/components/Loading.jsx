@@ -2,7 +2,7 @@ import React from "react"
 
 const Loading = ({ styles }) => {
     return (
-        <div className={`w-60 mx-auto ${styles}`}>
+        <div className={`w-1/2 mx-auto ${styles}`}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0"
