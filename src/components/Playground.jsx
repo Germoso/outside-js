@@ -17,10 +17,6 @@ const Playground = () => {
 
     const handleChange = (value, e) => {
         setUntranspiledCode(value)
-        // setTimeout(() => {
-        //     clearOutput()
-        //     run()
-        // }, 1000)
     }
 
     const run = useCallback(() => {
@@ -33,10 +29,8 @@ const Playground = () => {
     }, [code, outside_js])
 
     useEffect(() => {
-        setTimeout(() => {
-            clearOutput()
-            run()
-        }, 1)
+        clearOutput()
+        run()
     }, [code, clearOutput, run])
 
     return (

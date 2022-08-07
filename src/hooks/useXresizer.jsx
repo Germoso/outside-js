@@ -38,7 +38,7 @@ const useXresizer = !isMobile.any()
                           boxHeight -
                           (e.changedTouches[0].clientY - prevY) +
                           "px"
-                      if (component.current.getBoundingClientRect().height < 40)
+                      if (component.current.getBoundingClientRect().height < 80)
                           component.current.style.height = 10 + "px"
                   }
                   const onMouseup = (e) => {
