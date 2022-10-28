@@ -5,7 +5,7 @@ import { useConsole } from "../hooks/useConsole"
 import { useTranspiler } from "../hooks/useTranspiler"
 import { context, INITIAL_STATE } from "../context/OutsideJs"
 
-const Playground = () => {
+const Playground = ({autorun}) => {
     const [untranspiledCode, setUntranspiledCode] = useState("")
     const { code } = useTranspiler(untranspiledCode)
     const outside_js = useConsole()
@@ -16,13 +16,14 @@ const Playground = () => {
     }, [setMessages])
 
     const handleChange = (value, e) => {
-        setUntranspiledCode(value)
+        autorun && setUntranspiledCode(value)
     }
 
     const run = useCallback(() => {
         try {
             // eslint-disable-next-line no-eval
             eval(code)
+
         } catch (error) {
             outside_js.error(error)
         }
@@ -42,6 +43,11 @@ const Playground = () => {
                 loading={<Loading />}
                 theme={"vs-dark"}
             />
+            {/* <button 
+            onClick={() => {
+                run()
+            }}
+            className="h-10 w-10 bg-headline absolute bottom-5 left-1/2 rounded-lg">RUN</button> */}
         </div>
     )
 }
